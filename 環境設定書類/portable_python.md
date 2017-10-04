@@ -1,5 +1,5 @@
 環境を有効化済みの状態で`conda env export`を実行することで、環境設定をYAML形式で書き出すことができる。
-`$ conda env export > xxxx.yaml`
+<br>`$ conda env export > xxxx.yaml`
 ```yaml:xxxx.yaml
 
 name: xxxx
@@ -22,7 +22,7 @@ dependencies:
 
 ```
 ※カレントディレクトリに保存される
-`xxxx.yaml`が存在するディレクトリで，
-`$ conda env create --file xxxx.yaml`
-を実行するとその記載通りの仮想環境が構築される．
+<br>`xxxx.yaml`が存在するディレクトリで，
+<br>`$ conda env create --file xxxx.yaml`
+<br>を実行するとその記載通りの仮想環境が構築される．
 
