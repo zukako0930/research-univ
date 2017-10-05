@@ -1,0 +1,18 @@
+モチベ:gitのbranchをterminal上で表示させたい．
+<br>install済みのgitがAppleのやつだったので`homebrew`のものにupdateした．
+```
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions and functions have been installed to:
+  /usr/local/share/zsh/site-functions
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/git
+
+==> Summary
+🍺  /usr/local/Cellar/git/2.14.2: 1,486 files, 33.5MB
+```
+
+### 参考
+http://38ch.hateblo.jp/entry/2017/02/12/180145
