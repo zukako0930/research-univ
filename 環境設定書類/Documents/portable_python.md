@@ -1,4 +1,4 @@
-環境を有効化済みの状態で`conda env export`を実行することで、環境設定をYAML形式で書き出すことができる。
+環境を有効化(source activate)済みの状態で`conda env export`を実行することで、環境設定をYAML形式で書き出すことができる。
 <br>`$ conda env export > xxxx.yaml`
 ```yaml:xxxx.yaml
 
