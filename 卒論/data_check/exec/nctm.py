@@ -6,7 +6,7 @@ from ipywidgets import FloatProgress
 from IPython.display import display
 from time import sleep
 
-class NCTM:
+class NCTM:    
     def __init__(self, K, alpha, beta, gamma, eta, max_iter, verbose=0):
         self.K=K
         self.alpha = alpha
