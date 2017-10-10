@@ -1,0 +1,7 @@
+パラメータ
+K = 75
+alpha = 0.01
+beta= 0.01
+gamma= 0.01
+eta = 1.0
+max_iter = 1000
