@@ -3,8 +3,8 @@
 research-univ/
 　├ 環境設定書類/
 　├ 卒論/
-　│　├ Labeled LDA/
-　│　├ data/
+　 　├ Labeled LDA/
+　 　├ data/
 　　 ├ data\_check/
 　 　│　├ exec/
 　 　│　   ├ cleansing\_data/
