@@ -1,12 +1,12 @@
+#%%cython
 import random
 import numpy as np
 from scipy.sparse import lil_matrix
-#from IPython.html.widgets import FloatProgress
 from ipywidgets import FloatProgress
 from IPython.display import display
 from time import sleep
+class NCTM:
 
-class NCTM:    
     def __init__(self, K, alpha, beta, gamma, eta, max_iter, verbose=0):
         self.K=K
         self.alpha = alpha
@@ -106,6 +106,8 @@ class NCTM:
             remained_iter -= 1
             #イテレーションと同時にプログレスバーも進める
             fp.value+=1
+            if remained_iter % 100 == 0:
+                print("実行中...")
             if remained_iter <= 0: break
         return self
 
