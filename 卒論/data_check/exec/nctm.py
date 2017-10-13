@@ -45,6 +45,7 @@ class NCTM:
 
         remained_iter = self.max_iter
         while True:
+            print(self.R[0:10])
             if self.verbose: print(remained_iter)
             for d in np.random.choice(self._D, self._D, replace=False):
                 # Sample Z
