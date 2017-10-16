@@ -46,7 +46,7 @@ class NCTM:
 
         remained_iter = self.max_iter
         while True:
-            perp=self.calc_perplexity()
+            perp=self.calc_perplexity(nkw_sum)
             print('perp')
             print(perp)
             self.perplexity.append(perp)
@@ -129,7 +129,7 @@ class NCTM:
             Nk_vec[k]=sum_Ndk
         return Nk_vec
             
-    def calc_perplexity(self):
+    def calc_perplexity(self,nkw_sum):
         Kalpha = self.K*self.alpha
         theta = np.zeros(self.K)
         Nk = self.calc_Nk()
@@ -141,17 +141,24 @@ class NCTM:
         for d in range(self._D):
             ndk=self.ndk[d].copy()
             ndk[ndk==0]+=1
-            theta = np.nan_to_num(self.ndk[d]/(len(self._W[d])+Kalpha)*((ndk+1.0)/ndk)**self.mdk[d])
-            idx = 0
-            for v in range(len(self._W[d])):
-                v = self._W[d][idx] #v=文書dのidx番目の単語の辞書番号
+            #prob = (self.ndk[d]+self.alpha) * ((nkw+self.beta)/(nkw_sum+self.beta*self._Vw)) * ((ndk+1)/ndk)**self.mdk[d]
+            #theta = prob/prob.sum()
+            #theta = np.nan_to_num(self.ndk[d]/(len(self._W[d])+Kalpha)*((ndk+1.0)/ndk)**self.mdk[d])
+            #idx = 0
+            for i in range(len(self._W[d])):
+                v = self._W[d][i] #v=文書dのidx番目の単語の辞書番号
+                nkw = self.nkw[:,v] # k-dimensional vector #ある語彙vがトピックk(1~K)から生成した回数
+                prob = (self.ndk[d]+self.alpha) * ((nkw+self.beta)/(nkw_sum+self.beta*self._Vw)) * ((ndk+1)/ndk)**self.mdk[d]
+                theta = prob/prob.sum()
                 # print('phi')
                 # print(phi[:,v])
                 # print('theta')
                 # print(theta)
-                log_per -= np.log(np.inner(phi[:,v],theta))
+                # log_per -= np.log(np.inner(phi[:,v],theta))
+                log_per -= np.log(np.inner(nkw/nkw_sum,theta)) #logなので確率の積をlogの足し算に直せる．
+
                 #print(log_per)
-                idx += 1
+                #idx += 1
                 N+=1
         print('N='+str(N))
         print('log_per='+str(log_per))
