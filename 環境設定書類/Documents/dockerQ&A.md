@@ -15,5 +15,5 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 ### コンテナの一括削除
 `$ docker rm -f $(docker ps -aq)`
 
-### `docker run -d` または`Ctrl-Q`or`Ctrl-P`でデタッチモード
+### `docker run -d` または`Ctrl-Q`+`Ctrl-P`でデタッチモード
 `docker attach [container名]`でアタッチできる．
