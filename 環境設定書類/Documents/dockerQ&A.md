@@ -1,6 +1,6 @@
-## Q.`$docker [command]` を実行すると，
+### Q.`$ docker [command]` を実行すると，
 `Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?`となるのですが．  
-A.
+### A.
 ```
 $ docker images
 Cannot connect to the Docker daemon. Is the docker daemon running on this host?
@@ -12,3 +12,5 @@ $ eval "$(docker-machine env default)"  # dockerコマンドが動くように�
 $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ```
+### コンテナの一括削除
+`$ docker rm -f $(docker ps -aq)`
