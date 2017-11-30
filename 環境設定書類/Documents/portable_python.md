@@ -28,10 +28,10 @@ dependencies:
 
 ## 他人の環境でやったときにpyenvと競合していた問題
 本来なら
-`source activate py35`
+```source activate py35```
 で環境が切り替わるはずだがactivateがpyenvと競合しているので，
 Activateのパスを明示的に指定．
-`source $PYENV_ROOT/versions/anaconda4.3.1/bin/activate py35`
-とする.
-deactivateは競合していないっぽかった.
+```source $PYENV_ROOT/versions/anaconda4.3.1/bin/activate py35```
+とする. 
+deactivateは競合していないっぽかった. 
 [ここで解決](https://qiita.com/y__sama/items/f732bb7bec2bff355b69)
