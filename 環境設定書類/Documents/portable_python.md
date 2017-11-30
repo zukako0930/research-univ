@@ -34,4 +34,4 @@ Activateのパスを明示的に指定．
 `source $PYENV_ROOT/versions/anaconda4.3.1/bin/activate py35`
 とする.
 deactivateは競合していないっぽかった.
-[!ここで解決]https://qiita.com/y__sama/items/f732bb7bec2bff355b69
+[ここで解決]https://qiita.com/y__sama/items/f732bb7bec2bff355b69
