@@ -133,28 +133,17 @@ class NCTM:
         Kalpha = self.K*self.alpha
         theta = np.zeros(self.K)
         Nk = self.calc_Nk()
-        # print(Nk)
         phi = self.nkw/Nk[:,np.newaxis]
-        # print(phi)
         log_per = 0
         N = 0
         for d in range(self._D):
             ndk=self.ndk[d].copy()
             ndk[ndk==0]+=1
-            #prob = (self.ndk[d]+self.alpha) * ((nkw+self.beta)/(nkw_sum+self.beta*self._Vw)) * ((ndk+1)/ndk)**self.mdk[d]
-            #theta = prob/prob.sum()
-            #theta = np.nan_to_num(self.ndk[d]/(len(self._W[d])+Kalpha)*((ndk+1.0)/ndk)**self.mdk[d])
-            #idx = 0
             for i in range(len(self._W[d])):
                 v = self._W[d][i] #v=文書dのidx番目の単語の辞書番号
                 nkw = self.nkw[:,v] # k-dimensional vector #ある語彙vがトピックk(1~K)から生成した回数
                 prob = (self.ndk[d]+self.alpha) * ((nkw+self.beta)/(nkw_sum+self.beta*self._Vw)) * ((ndk+1)/ndk)**self.mdk[d]
                 theta = prob/prob.sum()
-                # print('phi')
-                # print(phi[:,v])
-                # print('theta')
-                # print(theta)
-                # log_per -= np.log(np.inner(phi[:,v],theta))
                 log_per -= np.log(np.inner(nkw/nkw_sum,theta)) #logなので確率の積をlogの足し算に直せる．
 
                 #print(log_per)
