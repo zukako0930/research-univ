@@ -2,10 +2,9 @@
 ```
 research-univ/
 　├ 環境設定書類/
+　├ work /
 　├ 卒論/
-　 　├ Labeled LDA/
-　 　├ data/
-　　 ├ data\_check/
+　　 ├ data/
 　 　│　├ exec/
 　 　│　   ├ cleansing\_data/
 　 　│　   │    ├ goodtags.csv(100000件)
